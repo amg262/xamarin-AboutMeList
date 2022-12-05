@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AboutMe"
+             x:Class="AboutMe.MainPage">
+
+    <StackLayout>
+        <ListView ItemsSource="{x:Static local:FactsAboutMe.Facts}" RowHeight="150" ItemSelected="OnSelection">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="5, 5, 0, 5" Orientation="Horizontal" Spacing="15">
+                            <Image Source="{Binding Image}" />
+                            <Label Text="{Binding ShortFact}" FontSize="Medium" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
